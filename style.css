@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap'); 
+
+:root {
+    --darkblue: #58699D;
+    --fanefarge: #2A324B;
+    --lightgray: #E1E5EE;
+    --hvit: #fff;
+}
+
+body {
+    background-color: var(--lightgray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    background-color: var(--lightgray);
+    max-width: 1000px; /* Juster bredden etter behov */
+    width: 100%;
+    font-family: 'Roboto', sans-serif; /* Set Roboto as the font for text in main-container */
+}
+
+.tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between; /* Plasser fanene jevnt mellomrom hverandre */
+    margin-bottom: -.1rem;
+    margin-right: 0.01rem;
+    margin-left: 0.11rem;
+}
+
+.tab {
+    cursor: pointer;
+    border: 0px solid var(--hvit);
+    background-color:var(--fanefarge);
+    color: var(--hvit);
+    font-weight: bold;
+    font-size: 16px; /* Juster fontstørrelse for å endre størrelsen */
+    transition: background-color 0.3s ease; /* Legg til overgangseffekt */
+    text-align: center; /* Sentrer teksten i midten av fanen */
+    box-sizing: border-box; /* Inkluder padding i den totale bredden/høyden */
+    padding: 21px; /* Angi padding for å oppnå ønsket avstand fra hver kant */
+    font-family: 'Roboto', sans-serif; /* Bruk Montserrat som skrifttype */
+    font-size: medium;
+}
+
+.tab1 { width: 15%; } /* Angi bredden for HTML-fanen */
+.tab2 { width: 15%; } /* Angi bredden for CSS-fanen */
+.tab3 { width: 20%; } /* Angi bredden for JavaScript-fanen */
+.tab4 { width: 14%; } /* Angi bredden for React-fanen */
+.tab5 { width: 30%; } /* Angi bredden for Sanity-fanen */
+
+.tab:hover {
+    background-color: var(--darkblue);
+}
+
+.tab.active {
+    background-color: var(--lightgray);;
+    color: #2A324B;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--lightgray);
+    border-radius: 0 0 5px 5px;
+    background-color: var(--hvit);
+    color: #2A324B;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab.active { /* Legg til stiler for valgt fane */
+    background-color: var(--hvit);
+    color: var(--fanefarge);
+}
+
+h1 {
+    text-align: center;
+  }
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 550px) {
+    .tabs {
+        flex-direction: column;
+        padding: 4px;
+    }
+
+    .tab, .tab1, .tab2, .tab3, .tab4, .tab5 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
